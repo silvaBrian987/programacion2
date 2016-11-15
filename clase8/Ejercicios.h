@@ -71,7 +71,7 @@ void Ejercicio2() {
 
 	string auxStr;
 	for (int i = 0; i < cantidadAlumnos; i++) {
-		cout << "Alumno nro " << i << endl << endl;
+		cout << "***Alumno nro " << i + 1 << "***" << endl << endl;
 
 		cout << "Nombre: ";
 		getline(cin, auxStr);
@@ -93,10 +93,65 @@ void Ejercicio2() {
 	cout << endl;
 
 	for (int i = 0; i < cantidadAlumnos; i++) {
-		cout << "Alumno nro " << i << endl << endl;
+		cout << "***Alumno nro " << i + 1 << "***" << endl << endl;
 		cout << "Nombre: " << alumnos[i].Nombre << endl;
 		cout << "Apellido: " << alumnos[i].Apellido << endl;
 		cout << "Fecha de nacimiento: " << alumnos[i].FechaNacimiento.toString(true) << endl;
+		cout << endl;
 	}
 
+	if (cantidadAlumnos > 1){
+		/*for (int i = 1; i < cantidadAlumnos; i++) {
+			for (int j = 0; j < (cantidadAlumnos - i); j++){
+				if (alumnos[j].esMayorQue(alumnos[j + 1])){
+					struct Alumno aux = alumnos[j + 1];
+					alumnos[j + 1] = alumnos[j];
+					alumnos[j] = aux;
+				}
+			}
+		}*/
+		alumnos[0].ordenarPorEdad(alumnos, cantidadAlumnos, false);
+	}
+
+	cout << endl << endl;
+
+	cout << "El alumno de menor edad es " << alumnos[0].Nombre << " " << alumnos[0].Apellido << endl;
+	cout << "El alumno de mayor edad es " << alumnos[cantidadAlumnos - 1].Nombre << " " << alumnos[cantidadAlumnos - 1].Apellido << endl;
+
+	delete[] alumnos;
+}
+
+void Ejercicio3(){
+	Ejercicio2();
+}
+
+
+void Ejercicio4(){
+	cin.ignore();
+
+	struct Juego piedraPapelTijera;
+
+	piedraPapelTijera.Nombre = "Piedra, Papel, Tijera";
+	piedraPapelTijera.Descripcion = "\n1-Piedra\n2-Papel\n3-Tijera";
+	piedraPapelTijera.Jugadores = new Jugador[2];
+
+	cout << "Juego: " << piedraPapelTijera.Nombre << endl;
+	cout << "Descripcion: " << piedraPapelTijera.Descripcion << endl;
+
+	cout << endl << endl;
+
+	string auxNombre;
+
+	cout << "Nombre jugador nro 1: ";
+	getline(cin, auxNombre);
+	piedraPapelTijera.Jugadores[0].Nombre = auxNombre;
+
+	cout << "Nombre jugador nro 2: ";
+	getline(cin, auxNombre);
+	piedraPapelTijera.Jugadores[1].Nombre = auxNombre;
+
+	cout << endl << endl;
+	
+
+	delete[] piedraPapelTijera.Jugadores;
 }

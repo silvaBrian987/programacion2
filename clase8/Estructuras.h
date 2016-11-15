@@ -15,15 +15,16 @@ struct Fecha {
 	int Dia;
 
 	void cargarDesdeString_YYYYMMDD(string fecha) {
-		this->Anio = stoi(fecha.substr(0, 3));
-		this->Mes = stoi(fecha.substr(3, 6));
-		this->Dia = stoi(fecha.substr(6, 8));
+		this->Anio = stoi(fecha.substr(0, 4));
+		this->Mes = stoi(fecha.substr(4, 2));
+		this->Dia = stoi(fecha.substr(6, 2));
 	}
 
 	string toString(bool formatted) {
 		if (formatted) {
 			return to_string(this->Dia) + "/" + to_string(this->Mes) + "/" + to_string(this->Anio);
-		}else{
+		}
+		else{
 			return  to_string(this->Anio) + to_string(this->Mes) + to_string(this->Dia);
 		}
 	}
@@ -35,21 +36,21 @@ struct Alumno {
 	Fecha FechaNacimiento;
 
 	bool esMayorQue(Alumno alumno) {
-		if (this->FechaNacimiento.Anio > alumno.FechaNacimiento.Anio) {
+		if (this->FechaNacimiento.Anio < alumno.FechaNacimiento.Anio) {
 			return true;
 		}
-		else if (this->FechaNacimiento.Anio < alumno.FechaNacimiento.Anio) {
+		else if (this->FechaNacimiento.Anio > alumno.FechaNacimiento.Anio) {
 			return false;
 		}
 		else {
-			if (this->FechaNacimiento.Mes > alumno.FechaNacimiento.Mes) {
+			if (this->FechaNacimiento.Mes < alumno.FechaNacimiento.Mes) {
 				return true;
 			}
-			else if (this->FechaNacimiento.Mes < alumno.FechaNacimiento.Mes) {
+			else if (this->FechaNacimiento.Mes > alumno.FechaNacimiento.Mes) {
 				return false;
 			}
 			else {
-				if (this->FechaNacimiento.Dia > alumno.FechaNacimiento.Dia) {
+				if (this->FechaNacimiento.Dia < alumno.FechaNacimiento.Dia) {
 					return true;
 				}
 				else if (this->FechaNacimiento.Dia > alumno.FechaNacimiento.Dia) {
@@ -61,4 +62,36 @@ struct Alumno {
 			}
 		}
 	}
+
+	void ordenarPorEdad(Alumno * alumnos, int cantidad, bool deMayorAMenor){
+		for (int i = 1; i < cantidad; i++) {
+			for (int j = 0; j < (cantidad - i); j++){
+				if (deMayorAMenor){
+					if (!alumnos[j].esMayorQue(alumnos[j + 1])){
+						struct Alumno aux = alumnos[j];
+						alumnos[j] = alumnos[j + 1];
+						alumnos[j + 1] = aux;
+					}
+				}
+				else{
+					if (alumnos[j].esMayorQue(alumnos[j + 1])){
+						struct Alumno aux = alumnos[j + 1];
+						alumnos[j + 1] = alumnos[j];
+						alumnos[j] = aux;
+					}
+				}
+			}
+		}
+	}
+};
+
+struct Jugador{
+	string Nombre;
+	int Puntos;
+};
+
+struct Juego{
+	string Nombre;
+	string Descripcion;
+	Jugador * Jugadores;
 };
