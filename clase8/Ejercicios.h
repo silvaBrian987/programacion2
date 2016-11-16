@@ -103,13 +103,13 @@ void Ejercicio2() {
 	if (cantidadAlumnos > 1){
 		/*for (int i = 1; i < cantidadAlumnos; i++) {
 			for (int j = 0; j < (cantidadAlumnos - i); j++){
-				if (alumnos[j].esMayorQue(alumnos[j + 1])){
-					struct Alumno aux = alumnos[j + 1];
-					alumnos[j + 1] = alumnos[j];
-					alumnos[j] = aux;
-				}
+			if (alumnos[j].esMayorQue(alumnos[j + 1])){
+			struct Alumno aux = alumnos[j + 1];
+			alumnos[j + 1] = alumnos[j];
+			alumnos[j] = aux;
 			}
-		}*/
+			}
+			}*/
 		alumnos[0].ordenarPorEdad(alumnos, cantidadAlumnos, false);
 	}
 
@@ -126,6 +126,12 @@ void Ejercicio3(){
 }
 
 
+const int PPT_PIEDRA = 1;
+const int PPT_PAPEL = 2;
+const int PPT_TIJERA = 3;
+void procesarJugada(Juego &piedraPapelTijera);
+void imprimirDatosJuego(Juego piedraPapelTijera);
+bool jugar(Juego &piedraPapelTijera);
 void Ejercicio4(){
 	cin.ignore();
 
@@ -133,10 +139,8 @@ void Ejercicio4(){
 
 	piedraPapelTijera.Nombre = "Piedra, Papel, Tijera";
 	piedraPapelTijera.Descripcion = "\n1-Piedra\n2-Papel\n3-Tijera";
-	piedraPapelTijera.Jugadores = new Jugador[2];
 
-	cout << "Juego: " << piedraPapelTijera.Nombre << endl;
-	cout << "Descripcion: " << piedraPapelTijera.Descripcion << endl;
+	imprimirDatosJuego(piedraPapelTijera);
 
 	cout << endl << endl;
 
@@ -151,7 +155,88 @@ void Ejercicio4(){
 	piedraPapelTijera.Jugadores[1].Nombre = auxNombre;
 
 	cout << endl << endl;
-	
 
-	delete[] piedraPapelTijera.Jugadores;
+	while (jugar(piedraPapelTijera)){
+		system("cls");
+	}
+}
+bool jugar(Juego &piedraPapelTijera){
+	cout << piedraPapelTijera.Jugadores[0].Nombre << ", ingrese su jugada: ";
+	cin >> piedraPapelTijera.Jugadores[0].Jugada;
+
+	system("cls");
+
+	imprimirDatosJuego(piedraPapelTijera);
+	cout << endl << endl;
+
+	cout << piedraPapelTijera.Jugadores[1].Nombre << ", ingrese su jugada: ";
+	cin >> piedraPapelTijera.Jugadores[1].Jugada;
+
+	procesarJugada(piedraPapelTijera);
+
+	if (piedraPapelTijera.Empate){
+		cout << "EMPATE!!" << endl;
+	}
+	else{
+		cout << "El ganador es: " << piedraPapelTijera.Ganador.Nombre << endl;
+		cout << "Puntos: " << piedraPapelTijera.Ganador.Puntos << endl;
+	}
+
+	cout << endl << endl;
+
+	int opcion = 0;
+	cout << "¿Desea jugar de nuevo?\n1) Si\nOpcion: ";
+	cin >> opcion;
+	if (opcion == 1){
+		return true;
+	}
+	return false;
+}
+void imprimirDatosJuego(Juego piedraPapelTijera){
+	cout << "Juego: " << piedraPapelTijera.Nombre << endl;
+	cout << "Descripcion: " << piedraPapelTijera.Descripcion << endl;
+}
+void procesarJugada(Juego &piedraPapelTijera){
+	int jugadaJugador1 = piedraPapelTijera.Jugadores[0].Jugada;
+	int jugadaJugador2 = piedraPapelTijera.Jugadores[1].Jugada;
+
+	if (jugadaJugador1 == PPT_PIEDRA){
+		if (jugadaJugador2 == PPT_PIEDRA){
+			piedraPapelTijera.Empate;
+		}
+		else if (jugadaJugador2 == PPT_PAPEL){
+			piedraPapelTijera.Jugadores[1].Puntos += 1;
+			piedraPapelTijera.Ganador = piedraPapelTijera.Jugadores[1];
+		}
+		else if (jugadaJugador2 == PPT_TIJERA){
+			piedraPapelTijera.Jugadores[0].Puntos += 1;
+			piedraPapelTijera.Ganador = piedraPapelTijera.Jugadores[0];
+		}
+	}
+	else if (jugadaJugador1 == PPT_PAPEL){
+		if (jugadaJugador2 == PPT_PAPEL){
+			piedraPapelTijera.Empate = true;
+		}
+		else if (jugadaJugador2 == PPT_TIJERA){
+			piedraPapelTijera.Jugadores[1].Puntos += 1;
+			piedraPapelTijera.Ganador = piedraPapelTijera.Jugadores[1];
+		}
+		else if (jugadaJugador2 == PPT_PIEDRA){
+			piedraPapelTijera.Jugadores[0].Puntos += 1;
+			piedraPapelTijera.Ganador = piedraPapelTijera.Jugadores[0];
+		}
+	}
+	else if (jugadaJugador1 == PPT_TIJERA){
+		if (jugadaJugador2 == PPT_TIJERA){
+			piedraPapelTijera.Empate;
+		}
+		else if (jugadaJugador2 == PPT_PIEDRA){
+			piedraPapelTijera.Jugadores[1].Puntos += 1;
+			piedraPapelTijera.Ganador = piedraPapelTijera.Jugadores[1];
+		}
+		else if (jugadaJugador2 == PPT_PAPEL){
+			piedraPapelTijera.Jugadores[0].Puntos += 1;
+			piedraPapelTijera.Ganador = piedraPapelTijera.Jugadores[0];
+		}
+	}
 }

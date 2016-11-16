@@ -87,11 +87,14 @@ struct Alumno {
 
 struct Jugador{
 	string Nombre;
-	int Puntos;
+	int Jugada;
+	int Puntos = 0;
 };
 
 struct Juego{
 	string Nombre;
 	string Descripcion;
-	Jugador * Jugadores;
+	Jugador Jugadores[2];
+	Jugador Ganador;
+	bool Empate = false;
 };
