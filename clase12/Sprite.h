@@ -18,6 +18,9 @@ ref struct SPRITE{
 	}
 
 	bool DetectarColision(SPRITE ^ sp){
-		return true;
+		if ((this->Ubicacion.X <= sp->Ubicacion.X) && (this->Ubicacion.Y >= sp->Ubicacion.Y)){
+			return true;
+		}
+		return false;
 	}
 };

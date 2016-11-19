@@ -13,9 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Archivos de recursos\assets">
+      <UniqueIdentifier>{7db5904f-8904-4e0b-8e89-1153f6734351}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MyForm.cpp">
+      <Filter>Archivos de código fuente</Filter>
+    </ClCompile>
+    <ClCompile Include="frmMDIContainer.cpp">
       <Filter>Archivos de código fuente</Filter>
     </ClCompile>
   </ItemGroup>
@@ -24,6 +30,12 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="frmMDIContainer.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Fondo.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -36,5 +48,16 @@
     <None Include="Tecnicatura en desarrollo de videojuegos.pptx">
       <Filter>Archivos de recursos</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="fondo.gif">
+      <Filter>Archivos de recursos\assets</Filter>
+    </Image>
+    <Image Include="angery.jpg">
+      <Filter>Archivos de recursos\assets</Filter>
+    </Image>
+    <Image Include="ejemplo.bmp">
+      <Filter>Archivos de recursos\assets</Filter>
+    </Image>
   </ItemGroup>
 </Project>

@@ -1,7 +1,8 @@
 #pragma once
+#include "Sprite.h"
+#include "Fondo.h"
 
 namespace clase12 {
-#include "Sprite.h"
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -22,6 +23,10 @@ namespace clase12 {
 			//
 			//TODO: agregar código de constructor aquí
 			//
+			//this->SetStyle(System::Windows::Forms::ControlStyles::UserPaint | System::Windows::Forms::ControlStyles::AllPaintingInWmPaint | System::Windows::Forms::ControlStyles::OptimizedDoubleBuffer, true);
+			this->SetStyle(System::Windows::Forms::ControlStyles::UserPaint, true);
+			this->SetStyle(System::Windows::Forms::ControlStyles::AllPaintingInWmPaint, true);
+			this->SetStyle(System::Windows::Forms::ControlStyles::OptimizedDoubleBuffer, true);
 		}
 
 	protected:
@@ -66,29 +71,39 @@ namespace clase12 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(284, 261);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Juego";
 			this->Load += gcnew System::EventHandler(this, &MyForm::MyForm_Load);
+			this->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::MyForm_Paint);
 			this->KeyDown += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyDown);
+			this->KeyPress += gcnew System::Windows::Forms::KeyPressEventHandler(this, &MyForm::MyForm_KeyPress);
+			this->KeyUp += gcnew System::Windows::Forms::KeyEventHandler(this, &MyForm::MyForm_KeyUp);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
 
 		Graphics ^ graficador;
-		SPRITE ^ imagen;
+		FONDO ^ fondo1;
+		FONDO ^ fondo2;
+		SPRITE ^ p1;
 		Color backColor;
 
 		void Dibujar(){
-			imagen->Dibujar(graficador);
+			fondo1->Dibujar(graficador);
+			fondo2->Dibujar(graficador);
+			p1->Dibujar(graficador);
 		}
 
 		void Actualizar(){
-			graficador->Clear(backColor);
-			
-			//Sleep 0.25seg
+			fondo1->Actualizar();
+			fondo2->Actualizar();
+			p1->Actualizar();
+
+			//Basicamente: borra todo el contenido del control (formulario en este caso) y llama al evento Paint
+			Invalidate();
 		}
 
-		void Mover(SPRITE ^ image, int keyCode){
+		void MoverP1(SPRITE ^ image, int keyCode){
 			int deltaX = 5;
 			int deltaY = 10;
 			int vel = 1;
@@ -97,18 +112,18 @@ namespace clase12 {
 
 			switch (keyCode)
 			{
-			case 40:
+			case 83:
 				pos = image->Ubicacion.Y + (vel * deltaY);
 				if (pos < this->Height) image->Ubicacion.Y = pos;
 				break;
-			case 38:
+			case 87:
 				pos = image->Ubicacion.Y - (vel * deltaY);
-				if(pos > 0) image->Ubicacion.Y = pos;
+				if (pos > 0) image->Ubicacion.Y = pos;
 				break;
-			case 39:
+			case 68:
 				image->Ubicacion.X += (vel * deltaX);
 				break;
-			case 37:
+			case 65:
 				image->Ubicacion.X -= (vel * deltaX);
 				break;
 			default:
@@ -117,26 +132,52 @@ namespace clase12 {
 		}
 
 	private: System::Void MyForm_Load(System::Object^  sender, System::EventArgs^  e) {
-				 graficador = this->CreateGraphics();
-				 backColor = this->BackColor;
+				 //graficador = this->CreateGraphics();
 
-				 timer1->Interval = 100;
+				 timer1->Interval = 1;
 				 timer1->Enabled = true;
 
-				 imagen = gcnew SPRITE();
-				 imagen->CargarTextura("F:\\Facultad\\assets\\angery.jpg");
-				 imagen->Tamanio.Width = 100;
-				 imagen->Tamanio.Height = 100;
-				 imagen->Ubicacion.X = 50;
-				 imagen->Ubicacion.Y = 50;
+				 //Fondo
+				 fondo1 = gcnew FONDO();
+				 fondo1->CargarTextura("fondo.gif");
+				 fondo1->Tamanio.Width = this->Width;
+				 fondo1->Tamanio.Height = this->Height;
+				 fondo1->Ubicacion.X = 0;
+				 fondo1->Ubicacion.Y = 0;
+
+				 fondo2 = gcnew FONDO();
+				 fondo2->CargarTextura("fondo2.gif");
+				 fondo2->Tamanio.Width = this->Width;
+				 fondo2->Tamanio.Height = this->Height;
+				 //fondo2->Ubicacion.X = 0;
+				 //fondo2->Ubicacion.Y = 0;
+
+				 //Personaje
+				 p1 = gcnew SPRITE();
+				 p1->CargarTextura("angery.jpg");
+				 p1->Tamanio.Width = 100;
+				 p1->Tamanio.Height = 100;
+				 p1->Ubicacion.X = 50;
+				 p1->Ubicacion.Y = 50;
 	}
 	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 				 Actualizar();
-				 Dibujar();
 	}
 	private: System::Void MyForm_KeyDown(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
 				 int keyCode = e->KeyValue;
-				 Mover(this->imagen, keyCode);
+				 MoverP1(this->p1, keyCode);
 	}
-	};
+	private: System::Void MyForm_KeyPress(System::Object^  sender, System::Windows::Forms::KeyPressEventArgs^  e) {
+				 /*int keyCode = e->KeyValue;
+				 Mover(this->imagen, keyCode);*/
+	}
+	private: System::Void MyForm_KeyUp(System::Object^  sender, System::Windows::Forms::KeyEventArgs^  e) {
+				 int keyCode = e->KeyValue;
+				 MoverP1(this->p1, keyCode);
+	}
+	private: System::Void MyForm_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+				 graficador = e->Graphics;
+				 Dibujar();
+	}
+};
 }
