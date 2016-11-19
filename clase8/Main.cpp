@@ -3,7 +3,7 @@
 int main() {
 	int opcion = 0;
 
-	cout << "Ejercicios:\n0)Salir\n1)Ejercicio 1\n2)Ejercicio 2\n3)Ejercicio 3\n4)Ejercicio 4" << endl;
+	cout << "Ejercicios:\n0)Salir\n1)Ejercicio 1\n2)Ejercicio 2\n3)Ejercicio 3\n4)Ejercicio 4\n1)Ejercicio 5\n2)Ejercicio 6\n3)Ejercicio 7\n4)Ejercicio 8" << endl;
 
 	cout << "Opcion: ";
 	cin >> opcion;
@@ -25,16 +25,16 @@ int main() {
 		Ejercicio4();
 		break;
 	case 5:
-		//Ejercicio5();
+		Ejercicio5();
 		break;
 	case 6:
-		//Ejercicio6();
+		Ejercicio6();
 		break;
 	case 7:
-		//Ejercicio7();
+		Ejercicio7();
 		break;
 	case 8:
-		//Ejercicio8();
+		Ejercicio8();
 		break;
 	default:
 		break;

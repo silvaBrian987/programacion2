@@ -98,3 +98,35 @@ struct Juego{
 	Jugador Ganador;
 	bool Empate = false;
 };
+
+
+struct Datos {
+	string Nombre;
+	string Pais;
+};
+
+struct Atleta {
+	string Deporte;
+	struct Datos Pers;
+	int Medallas;
+};
+
+struct Persona {
+	string Nombre, Apellido, Cargo;
+};
+
+struct Empleado_ejercicio6 {
+	struct Persona Persona;
+};
+
+struct Jefe {
+	struct Persona Persona;
+	Empleado_ejercicio6 * Empleados;
+	int CantidadEmpleados;
+};
+
+struct Gerente {
+	struct Persona Persona;
+	Jefe * Jefes;
+	int CantidadJefes;
+};
