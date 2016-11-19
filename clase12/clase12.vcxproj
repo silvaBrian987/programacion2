@@ -127,12 +127,14 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Tecnicatura en desarrollo de videojuegos.pptx" />
-  </ItemGroup>
-  <ItemGroup>
     <Image Include="angery.jpg" />
     <Image Include="ejemplo.bmp" />
     <Image Include="fondo.gif" />
+    <Image Include="fondo2.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="clase12.pptx" />
+    <None Include="clase13.pptx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
