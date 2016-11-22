@@ -20,6 +20,7 @@
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v120</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>true</CLRSupport>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -47,6 +48,8 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -64,6 +67,45 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="frmClase10_Ejercicio1.cpp" />
+    <ClCompile Include="frmClase10_Ejercicio2.cpp" />
+    <ClCompile Include="frmClase10_Ejercicio3.cpp" />
+    <ClCompile Include="frmClase10_Ejercicio4.cpp" />
+    <ClCompile Include="frmClase10_Ejercicio5.cpp" />
+    <ClCompile Include="frmMDIContainer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="frmClase10_Ejercicio1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio4.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio5.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmMDIContainer.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="FuncionesGenerales.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmClase10_Ejercicio5.resx">
+      <DependentUpon>frmClase10_Ejercicio5.h</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

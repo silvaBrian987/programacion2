@@ -14,4 +14,47 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="frmMDIContainer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio1.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="frmMDIContainer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="FuncionesGenerales.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
 </Project>
