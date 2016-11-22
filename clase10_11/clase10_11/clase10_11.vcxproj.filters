@@ -33,6 +33,15 @@
     <ClCompile Include="frmClase10_Ejercicio5.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FuncionesGenerales.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio6.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase10_Ejercicio7.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmMDIContainer.h">
@@ -56,5 +65,27 @@
     <ClInclude Include="FuncionesGenerales.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio6.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmClase10_Ejercicio5.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Clase -A1 - Winforms.doc">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Clase -A2 - Winforms.doc">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="clase -winforms.pptx">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -74,14 +74,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="frmClase10_Ejercicio6.cpp" />
     <ClCompile Include="frmClase10_Ejercicio1.cpp" />
     <ClCompile Include="frmClase10_Ejercicio2.cpp" />
     <ClCompile Include="frmClase10_Ejercicio3.cpp" />
     <ClCompile Include="frmClase10_Ejercicio4.cpp" />
     <ClCompile Include="frmClase10_Ejercicio5.cpp" />
+    <ClCompile Include="frmClase10_Ejercicio7.cpp" />
     <ClCompile Include="frmMDIContainer.cpp" />
+    <ClCompile Include="FuncionesGenerales.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="frmClase10_Ejercicio6.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmClase10_Ejercicio1.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -97,15 +103,32 @@
     <ClInclude Include="frmClase10_Ejercicio5.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="frmClase10_Ejercicio7.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="frmMDIContainer.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="FuncionesGenerales.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmClase10_Ejercicio6.resx">
+      <DependentUpon>frmClase10_Ejercicio6.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClase10_Ejercicio5.resx">
       <DependentUpon>frmClase10_Ejercicio5.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClase10_Ejercicio7.resx">
+      <DependentUpon>frmClase10_Ejercicio7.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMDIContainer.resx">
+      <DependentUpon>frmMDIContainer.h</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Clase -A1 - Winforms.doc" />
+    <None Include="Clase -A2 - Winforms.doc" />
+    <None Include="clase -winforms.pptx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

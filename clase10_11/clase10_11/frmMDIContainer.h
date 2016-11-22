@@ -1,9 +1,12 @@
 #pragma once
+#include "FuncionesGenerales.h"
 #include "frmClase10_Ejercicio1.h"
 #include "frmClase10_Ejercicio2.h"
 #include "frmClase10_Ejercicio3.h"
 #include "frmClase10_Ejercicio4.h"
 #include "frmClase10_Ejercicio5.h"
+#include "frmClase10_Ejercicio6.h"
+#include "frmClase10_Ejercicio7.h"
 
 namespace clase10_11 {
 
@@ -140,12 +143,14 @@ namespace clase10_11 {
 			this->ejercicio6ToolStripMenuItem->Name = L"ejercicio6ToolStripMenuItem";
 			this->ejercicio6ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->ejercicio6ToolStripMenuItem->Text = L"Ejercicio 6";
+			this->ejercicio6ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio6ToolStripMenuItem_Click);
 			// 
 			// ejercicio7ToolStripMenuItem
 			// 
 			this->ejercicio7ToolStripMenuItem->Name = L"ejercicio7ToolStripMenuItem";
 			this->ejercicio7ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
 			this->ejercicio7ToolStripMenuItem->Text = L"Ejercicio 7";
+			this->ejercicio7ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio7ToolStripMenuItem_Click);
 			// 
 			// clase11ToolStripMenuItem
 			// 
@@ -192,6 +197,16 @@ namespace clase10_11 {
 	}
 	private: System::Void ejercicio5ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
 		frmClase10_Ejercicio5 ^ form = gcnew frmClase10_Ejercicio5();
+		form->MdiParent = this;
+		form->Show();
+	}
+	private: System::Void ejercicio6ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		frmClase10_Ejercicio6 ^ form = gcnew frmClase10_Ejercicio6();
+		form->MdiParent = this;
+		form->Show();
+	}
+	private: System::Void ejercicio7ToolStripMenuItem_Click(System::Object^  sender, System::EventArgs^  e) {
+		frmClase10_Ejercicio7 ^ form = gcnew frmClase10_Ejercicio7();
 		form->MdiParent = this;
 		form->Show();
 	}
