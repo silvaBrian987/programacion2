@@ -1,4 +1,5 @@
 #pragma once
+#include "frmDialogBox.h"
 
 namespace clase10_11 {
 
@@ -107,6 +108,7 @@ namespace clase10_11 {
 			this->btnAgregarNota->TabIndex = 3;
 			this->btnAgregarNota->Text = L"Agregar nota";
 			this->btnAgregarNota->UseVisualStyleBackColor = true;
+			this->btnAgregarNota->Click += gcnew System::EventHandler(this, &frmClase10_Ejercicio7::btnAgregarNota_Click);
 			// 
 			// label1
 			// 
@@ -187,14 +189,47 @@ namespace clase10_11 {
 					return "Desaprobado";
 				}
 			}
+
+			void LimpiarNotas(){
+				Alumno = "";
+				Notas = gcnew System::Collections::Generic::List < Double > ;
+			}
 		};
 
 		NotasAlumno alumno;
+	private: System::Void btnAgregarNota_Click(System::Object^  sender, System::EventArgs^  e) {
+		clase10_11::frmDialogBox^ dialogBox = gcnew clase10_11::frmDialogBox;
+		if (dialogBox->ShowDialog(this) == System::Windows::Forms::DialogResult::OK){
+			Double nota = Double::Parse(dialogBox->txtDialog->Text);
+			lbNotas->Items->Add(nota);
+			alumno.Notas->Add(nota);
+		}
+		delete dialogBox;
+	}
 	private: System::Void btnCalcularPromedio_Click(System::Object^  sender, System::EventArgs^  e) {
+		Double promedio = alumno.ObtenerPromedio();
+		String^ estado = alumno.ObtenerEstadoSituacion();
+
+		MessageBox::Show(this, "Promedio: " + promedio + "\nEstado de situacion: " + estado, "Notas");
 	}
 	private: System::Void btnDefinirAlumno_Click(System::Object^  sender, System::EventArgs^  e) {
-		alumno.Alumno = txtAlumno->Text;
-		
+		if (!gbNotas->Enabled){
+			txtAlumno->Enabled = false;
+			alumno.Alumno = txtAlumno->Text;
+			gbNotas->Enabled = true;
+			btnDefinirAlumno->Text = "Cambiar alumno";
+		}
+		else{
+			LimpiarFormulario();
+			txtAlumno->Enabled = true;
+			gbNotas->Enabled = false;
+			btnDefinirAlumno->Text = "Definir alumno";
+		}
 	}
-};
+	private: void LimpiarFormulario(){
+		txtAlumno->Text = "";
+		lbNotas->Items->Clear();
+		alumno.LimpiarNotas();
+	}
+	};
 }

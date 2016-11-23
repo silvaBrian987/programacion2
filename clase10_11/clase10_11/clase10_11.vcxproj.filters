@@ -42,6 +42,9 @@
     <ClCompile Include="frmClase10_Ejercicio7.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="frmDialogBox.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmMDIContainer.h">
@@ -69,6 +72,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="frmClase10_Ejercicio7.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmDialogBox.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

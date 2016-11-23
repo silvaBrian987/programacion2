@@ -1,4 +1,5 @@
 #pragma once
+
 #include "FuncionesGenerales.h"
 #include "frmClase10_Ejercicio1.h"
 #include "frmClase10_Ejercicio2.h"
