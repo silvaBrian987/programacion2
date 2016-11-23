@@ -39,6 +39,7 @@ namespace clase10_11 {
 	private: System::Windows::Forms::GroupBox^  gBoxProducto;
 	private: System::Windows::Forms::GroupBox^  groupBox1;
 	private: System::Windows::Forms::GroupBox^  groupBox2;
+	private: System::Windows::Forms::Button^  btnSalir;
 
 	private: System::Windows::Forms::Button^  btnRecargarArchivo;
 
@@ -118,6 +119,7 @@ namespace clase10_11 {
 			this->gBoxProducto = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox1 = (gcnew System::Windows::Forms::GroupBox());
 			this->groupBox2 = (gcnew System::Windows::Forms::GroupBox());
+			this->btnSalir = (gcnew System::Windows::Forms::Button());
 			this->gBoxProducto->SuspendLayout();
 			this->groupBox1->SuspendLayout();
 			this->groupBox2->SuspendLayout();
@@ -125,7 +127,7 @@ namespace clase10_11 {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(168, 88);
+			this->button1->Location = System::Drawing::Point(168, 72);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(80, 23);
 			this->button1->TabIndex = 0;
@@ -135,7 +137,8 @@ namespace clase10_11 {
 			// 
 			// btnCargarProducto
 			// 
-			this->btnCargarProducto->Location = System::Drawing::Point(168, 40);
+			this->btnCargarProducto->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+			this->btnCargarProducto->Location = System::Drawing::Point(168, 24);
 			this->btnCargarProducto->Name = L"btnCargarProducto";
 			this->btnCargarProducto->Size = System::Drawing::Size(80, 23);
 			this->btnCargarProducto->TabIndex = 1;
@@ -152,7 +155,7 @@ namespace clase10_11 {
 			// 
 			// btnGuardarEnArchivo
 			// 
-			this->btnGuardarEnArchivo->Location = System::Drawing::Point(264, 40);
+			this->btnGuardarEnArchivo->Location = System::Drawing::Point(264, 24);
 			this->btnGuardarEnArchivo->Name = L"btnGuardarEnArchivo";
 			this->btnGuardarEnArchivo->Size = System::Drawing::Size(104, 23);
 			this->btnGuardarEnArchivo->TabIndex = 3;
@@ -162,9 +165,9 @@ namespace clase10_11 {
 			// 
 			// btnRecargarArchivo
 			// 
-			this->btnRecargarArchivo->Location = System::Drawing::Point(264, 88);
+			this->btnRecargarArchivo->Location = System::Drawing::Point(264, 64);
 			this->btnRecargarArchivo->Name = L"btnRecargarArchivo";
-			this->btnRecargarArchivo->Size = System::Drawing::Size(136, 23);
+			this->btnRecargarArchivo->Size = System::Drawing::Size(104, 40);
 			this->btnRecargarArchivo->TabIndex = 4;
 			this->btnRecargarArchivo->Text = L"Recargar desde archivo";
 			this->btnRecargarArchivo->UseVisualStyleBackColor = true;
@@ -202,7 +205,7 @@ namespace clase10_11 {
 			// 
 			this->gBoxProducto->Controls->Add(this->cbProducto_Estado);
 			this->gBoxProducto->Controls->Add(this->txtProducto_Nombre);
-			this->gBoxProducto->Location = System::Drawing::Point(24, 32);
+			this->gBoxProducto->Location = System::Drawing::Point(24, 16);
 			this->gBoxProducto->Name = L"gBoxProducto";
 			this->gBoxProducto->Size = System::Drawing::Size(128, 88);
 			this->gBoxProducto->TabIndex = 8;
@@ -212,7 +215,7 @@ namespace clase10_11 {
 			// groupBox1
 			// 
 			this->groupBox1->Controls->Add(this->lblProductos);
-			this->groupBox1->Location = System::Drawing::Point(16, 152);
+			this->groupBox1->Location = System::Drawing::Point(16, 136);
 			this->groupBox1->Name = L"groupBox1";
 			this->groupBox1->Size = System::Drawing::Size(152, 120);
 			this->groupBox1->TabIndex = 9;
@@ -222,18 +225,31 @@ namespace clase10_11 {
 			// groupBox2
 			// 
 			this->groupBox2->Controls->Add(this->lblProductosInactivos);
-			this->groupBox2->Location = System::Drawing::Point(200, 152);
+			this->groupBox2->Location = System::Drawing::Point(216, 136);
 			this->groupBox2->Name = L"groupBox2";
 			this->groupBox2->Size = System::Drawing::Size(152, 120);
 			this->groupBox2->TabIndex = 10;
 			this->groupBox2->TabStop = false;
 			this->groupBox2->Text = L"Productos inactivos";
 			// 
+			// btnSalir
+			// 
+			this->btnSalir->DialogResult = System::Windows::Forms::DialogResult::Cancel;
+			this->btnSalir->Location = System::Drawing::Point(16, 272);
+			this->btnSalir->Name = L"btnSalir";
+			this->btnSalir->Size = System::Drawing::Size(352, 24);
+			this->btnSalir->TabIndex = 11;
+			this->btnSalir->Text = L"Salir";
+			this->btnSalir->UseVisualStyleBackColor = true;
+			this->btnSalir->Click += gcnew System::EventHandler(this, &frmClase11_Ejercicio1::btnSalir_Click);
+			// 
 			// frmClase11_Ejercicio1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(501, 329);
+			this->CancelButton = this->btnSalir;
+			this->ClientSize = System::Drawing::Size(389, 306);
+			this->Controls->Add(this->btnSalir);
 			this->Controls->Add(this->groupBox2);
 			this->Controls->Add(this->groupBox1);
 			this->Controls->Add(this->gBoxProducto);
@@ -253,6 +269,12 @@ namespace clase10_11 {
 		}
 #pragma endregion
 	private: Producto^ productoSeleccionado;
+
+	private: void Salir(){
+		writer->Flush();
+		archivoProductos->Close();
+		this->Close();
+	}
 
 	private: Producto^ BuscarProductoPorNombre(String^ Nombre, int &index){
 		for (int i = 0; i < productos->Count; i++){
@@ -295,7 +317,8 @@ namespace clase10_11 {
 			producto->Nombre = txtProducto_Nombre->Text;
 			producto->Estado = cbProducto_Estado->Checked;
 			productos[index] = producto;
-		}else{
+		}
+		else{
 			producto = gcnew Producto;
 			producto->Nombre = txtProducto_Nombre->Text;
 			producto->Estado = cbProducto_Estado->Checked;
@@ -329,5 +352,8 @@ namespace clase10_11 {
 		txtProducto_Nombre->Text = prod->Nombre;
 		cbProducto_Estado->Checked = prod->Estado;
 	}
-	};
+	private: System::Void btnSalir_Click(System::Object^  sender, System::EventArgs^  e) {
+		Salir();
+	}
+};
 }

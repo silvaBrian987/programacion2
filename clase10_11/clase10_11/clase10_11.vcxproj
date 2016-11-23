@@ -148,6 +148,15 @@
     <EmbeddedResource Include="frmClase11_Ejercicio1.resx">
       <DependentUpon>frmClase11_Ejercicio1.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmClase11_Ejercicio2.resx">
+      <DependentUpon>frmClase11_Ejercicio2.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClase11_Ejercicio3.resx">
+      <DependentUpon>frmClase11_Ejercicio3.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClase11_Ejercicio4.resx">
+      <DependentUpon>frmClase11_Ejercicio4.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDialogBox.resx">
       <DependentUpon>frmDialogBox.h</DependentUpon>
     </EmbeddedResource>

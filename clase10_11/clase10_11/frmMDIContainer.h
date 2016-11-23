@@ -10,6 +10,9 @@
 #include "frmClase10_Ejercicio7.h"
 
 #include "frmClase11_Ejercicio1.h"
+#include "frmClase11_Ejercicio2.h"
+#include "frmClase11_Ejercicio3.h"
+#include "frmClase11_Ejercicio4.h"
 
 namespace clase10_11 {
 
@@ -185,18 +188,21 @@ namespace clase10_11 {
 			this->ejercicio2ToolStripMenuItem1->Name = L"ejercicio2ToolStripMenuItem1";
 			this->ejercicio2ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->ejercicio2ToolStripMenuItem1->Text = L"Ejercicio 2";
+			this->ejercicio2ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio2ToolStripMenuItem1_Click);
 			// 
 			// ejercicio3ToolStripMenuItem1
 			// 
 			this->ejercicio3ToolStripMenuItem1->Name = L"ejercicio3ToolStripMenuItem1";
 			this->ejercicio3ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->ejercicio3ToolStripMenuItem1->Text = L"Ejercicio 3";
+			this->ejercicio3ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio3ToolStripMenuItem1_Click);
 			// 
 			// ejercicio4ToolStripMenuItem1
 			// 
 			this->ejercicio4ToolStripMenuItem1->Name = L"ejercicio4ToolStripMenuItem1";
 			this->ejercicio4ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
 			this->ejercicio4ToolStripMenuItem1->Text = L"Ejercicio 4";
+			this->ejercicio4ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio4ToolStripMenuItem1_Click);
 			// 
 			// frmMDIContainer
 			// 
@@ -255,5 +261,20 @@ namespace clase10_11 {
 		form->MdiParent = this;
 		form->Show();
 	}
-};
+	private: System::Void ejercicio2ToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+		frmClase11_Ejercicio2 ^ form = gcnew frmClase11_Ejercicio2();
+		form->MdiParent = this;
+		form->Show();
+	}
+	private: System::Void ejercicio3ToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+		frmClase11_Ejercicio3 ^ form = gcnew frmClase11_Ejercicio3();
+		form->MdiParent = this;
+		form->Show();
+	}
+	private: System::Void ejercicio4ToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+		frmClase11_Ejercicio4 ^ form = gcnew frmClase11_Ejercicio4();
+		form->MdiParent = this;
+		form->Show();
+	}
+	};
 }
