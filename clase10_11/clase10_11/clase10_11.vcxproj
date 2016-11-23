@@ -112,6 +112,10 @@
     <ClInclude Include="FuncionesGenerales.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmClase10_Ejercicio1.resx" />
+    <EmbeddedResource Include="frmClase10_Ejercicio2.resx" />
+    <EmbeddedResource Include="frmClase10_Ejercicio3.resx" />
+    <EmbeddedResource Include="frmClase10_Ejercicio4.resx" />
     <EmbeddedResource Include="frmClase10_Ejercicio6.resx">
       <DependentUpon>frmClase10_Ejercicio6.h</DependentUpon>
     </EmbeddedResource>
