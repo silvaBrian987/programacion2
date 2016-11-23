@@ -82,6 +82,9 @@
     <ClCompile Include="frmClase10_Ejercicio5.cpp" />
     <ClCompile Include="frmClase10_Ejercicio7.cpp" />
     <ClCompile Include="frmClase11_Ejercicio1.cpp" />
+    <ClCompile Include="frmClase11_Ejercicio2.cpp" />
+    <ClCompile Include="frmClase11_Ejercicio3.cpp" />
+    <ClCompile Include="frmClase11_Ejercicio4.cpp" />
     <ClCompile Include="frmDialogBox.cpp" />
     <ClCompile Include="frmMDIContainer.cpp" />
     <ClCompile Include="FuncionesGenerales.cpp" />
@@ -109,6 +112,15 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmClase11_Ejercicio1.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase11_Ejercicio2.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase11_Ejercicio3.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="frmClase11_Ejercicio4.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="frmDialogBox.h">

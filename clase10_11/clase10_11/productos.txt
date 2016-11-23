@@ -1,0 +1,7 @@
+Producto 1|True
+Producto 2|True
+Producto 3|False
+Producto 4|True
+Producto 5|False
+Producto 6|True
+Mepes|True

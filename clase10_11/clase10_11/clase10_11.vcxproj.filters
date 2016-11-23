@@ -48,6 +48,15 @@
     <ClCompile Include="frmClase11_Ejercicio1.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="frmClase11_Ejercicio2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase11_Ejercicio3.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="frmClase11_Ejercicio4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="frmMDIContainer.h">
@@ -83,6 +92,15 @@
     <ClInclude Include="frmClase11_Ejercicio1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="frmClase11_Ejercicio2.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase11_Ejercicio3.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="frmClase11_Ejercicio4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmClase10_Ejercicio5.resx">
@@ -110,6 +128,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDialogBox.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmClase11_Ejercicio1.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

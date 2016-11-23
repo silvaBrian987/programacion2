@@ -9,6 +9,8 @@
 #include "frmClase10_Ejercicio6.h"
 #include "frmClase10_Ejercicio7.h"
 
+#include "frmClase11_Ejercicio1.h"
+
 namespace clase10_11 {
 
 	using namespace System;
@@ -54,6 +56,10 @@ namespace clase10_11 {
 	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio5ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio6ToolStripMenuItem;
 	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio7ToolStripMenuItem;
+	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio1ToolStripMenuItem1;
+	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio2ToolStripMenuItem1;
+	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio3ToolStripMenuItem1;
+	private: System::Windows::Forms::ToolStripMenuItem^  ejercicio4ToolStripMenuItem1;
 
 	private:
 		/// <summary>
@@ -78,6 +84,10 @@ namespace clase10_11 {
 			this->ejercicio6ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->ejercicio7ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->clase11ToolStripMenuItem = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ejercicio1ToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ejercicio2ToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ejercicio3ToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
+			this->ejercicio4ToolStripMenuItem1 = (gcnew System::Windows::Forms::ToolStripMenuItem());
 			this->menuStrip1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -107,57 +117,86 @@ namespace clase10_11 {
 			// ejercicio1ToolStripMenuItem
 			// 
 			this->ejercicio1ToolStripMenuItem->Name = L"ejercicio1ToolStripMenuItem";
-			this->ejercicio1ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio1ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio1ToolStripMenuItem->Text = L"Ejercicio 1";
 			this->ejercicio1ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio1ToolStripMenuItem_Click);
 			// 
 			// ejercicio2ToolStripMenuItem
 			// 
 			this->ejercicio2ToolStripMenuItem->Name = L"ejercicio2ToolStripMenuItem";
-			this->ejercicio2ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio2ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio2ToolStripMenuItem->Text = L"Ejercicio 2";
 			this->ejercicio2ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio2ToolStripMenuItem_Click);
 			// 
 			// ejercicio3ToolStripMenuItem
 			// 
 			this->ejercicio3ToolStripMenuItem->Name = L"ejercicio3ToolStripMenuItem";
-			this->ejercicio3ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio3ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio3ToolStripMenuItem->Text = L"Ejercicio 3";
 			this->ejercicio3ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio3ToolStripMenuItem_Click);
 			// 
 			// ejercicio4ToolStripMenuItem
 			// 
 			this->ejercicio4ToolStripMenuItem->Name = L"ejercicio4ToolStripMenuItem";
-			this->ejercicio4ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio4ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio4ToolStripMenuItem->Text = L"Ejercicio 4";
 			this->ejercicio4ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio4ToolStripMenuItem_Click);
 			// 
 			// ejercicio5ToolStripMenuItem
 			// 
 			this->ejercicio5ToolStripMenuItem->Name = L"ejercicio5ToolStripMenuItem";
-			this->ejercicio5ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio5ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio5ToolStripMenuItem->Text = L"Ejercicio 5";
 			this->ejercicio5ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio5ToolStripMenuItem_Click);
 			// 
 			// ejercicio6ToolStripMenuItem
 			// 
 			this->ejercicio6ToolStripMenuItem->Name = L"ejercicio6ToolStripMenuItem";
-			this->ejercicio6ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio6ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio6ToolStripMenuItem->Text = L"Ejercicio 6";
 			this->ejercicio6ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio6ToolStripMenuItem_Click);
 			// 
 			// ejercicio7ToolStripMenuItem
 			// 
 			this->ejercicio7ToolStripMenuItem->Name = L"ejercicio7ToolStripMenuItem";
-			this->ejercicio7ToolStripMenuItem->Size = System::Drawing::Size(152, 22);
+			this->ejercicio7ToolStripMenuItem->Size = System::Drawing::Size(127, 22);
 			this->ejercicio7ToolStripMenuItem->Text = L"Ejercicio 7";
 			this->ejercicio7ToolStripMenuItem->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio7ToolStripMenuItem_Click);
 			// 
 			// clase11ToolStripMenuItem
 			// 
+			this->clase11ToolStripMenuItem->DropDownItems->AddRange(gcnew cli::array< System::Windows::Forms::ToolStripItem^  >(4) {
+				this->ejercicio1ToolStripMenuItem1,
+					this->ejercicio2ToolStripMenuItem1, this->ejercicio3ToolStripMenuItem1, this->ejercicio4ToolStripMenuItem1
+			});
 			this->clase11ToolStripMenuItem->Name = L"clase11ToolStripMenuItem";
 			this->clase11ToolStripMenuItem->Size = System::Drawing::Size(62, 20);
 			this->clase11ToolStripMenuItem->Text = L"Clase 11";
+			// 
+			// ejercicio1ToolStripMenuItem1
+			// 
+			this->ejercicio1ToolStripMenuItem1->Name = L"ejercicio1ToolStripMenuItem1";
+			this->ejercicio1ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->ejercicio1ToolStripMenuItem1->Text = L"Ejercicio 1";
+			this->ejercicio1ToolStripMenuItem1->Click += gcnew System::EventHandler(this, &frmMDIContainer::ejercicio1ToolStripMenuItem1_Click);
+			// 
+			// ejercicio2ToolStripMenuItem1
+			// 
+			this->ejercicio2ToolStripMenuItem1->Name = L"ejercicio2ToolStripMenuItem1";
+			this->ejercicio2ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->ejercicio2ToolStripMenuItem1->Text = L"Ejercicio 2";
+			// 
+			// ejercicio3ToolStripMenuItem1
+			// 
+			this->ejercicio3ToolStripMenuItem1->Name = L"ejercicio3ToolStripMenuItem1";
+			this->ejercicio3ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->ejercicio3ToolStripMenuItem1->Text = L"Ejercicio 3";
+			// 
+			// ejercicio4ToolStripMenuItem1
+			// 
+			this->ejercicio4ToolStripMenuItem1->Name = L"ejercicio4ToolStripMenuItem1";
+			this->ejercicio4ToolStripMenuItem1->Size = System::Drawing::Size(152, 22);
+			this->ejercicio4ToolStripMenuItem1->Text = L"Ejercicio 4";
 			// 
 			// frmMDIContainer
 			// 
@@ -211,5 +250,10 @@ namespace clase10_11 {
 		form->MdiParent = this;
 		form->Show();
 	}
-	};
+	private: System::Void ejercicio1ToolStripMenuItem1_Click(System::Object^  sender, System::EventArgs^  e) {
+		frmClase11_Ejercicio1 ^ form = gcnew frmClase11_Ejercicio1();
+		form->MdiParent = this;
+		form->Show();
+	}
+};
 }
